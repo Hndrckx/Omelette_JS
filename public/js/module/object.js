@@ -12,7 +12,7 @@ export let perso = {
     argent: 85,
     mainDroite: [],
     mainGauche: [],
-    seDeplacer: function (a,z) {
+    seDeplacer: function (a, z) {
         a.push(perso)
         perso.lieu = a.nom
         alert((perso.nom) + " est à " + (z))
@@ -35,9 +35,10 @@ export let perso = {
             }
         })
     },
-    prendre: function(e, f){
-        for (let i = 0; i < 5; i++){
-            e.push(f)
+    prendre: function (e, f) {
+        for (let i = 0; i < 5; i++) {
+            e.push(f[i])
+            alert((perso.nom) + " a pris " + (f[i].nom))
         }
     }
 }
@@ -48,6 +49,7 @@ export let home = {
 }
 
 export let emptyBasket = {
+    nom: "Panier",
     contenu: [],
 }
 
@@ -69,7 +71,10 @@ export let bol = {
 export let poele = {
     nom: "Poêle",
     contenu: [],
-    cuir: function (h) {setTimeout(()=> {h = "cuit"}, 4000)
-    alert("L'Omelette est prête")
+    cuir: function (h) {
+        setTimeout(() => {
+            h = "cuit"
+        }, 4000)
+        alert("L'Omelette est prête")
     }
 }
