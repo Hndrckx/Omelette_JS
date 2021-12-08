@@ -6,16 +6,16 @@ import {
     epice
 } from "./class.js"
 
-let perso = {
+export let perso = {
     nom: "Michel",
     lieu: "la maison",
     argent: 85,
     mainDroite: [],
     mainGauche: [],
-    seDéplacer: function (a) {
+    seDeplacer: function (a,z) {
         a.push(perso)
         perso.lieu = a.nom
-        alert((perso.nom) + " est à " + (perso.lieu))
+        alert((perso.nom) + " est à " + (z))
     },
     payer: function (b) {
         b.forEach(item => {
@@ -34,22 +34,42 @@ let perso = {
                 alert((item.nom) + "a été mis dans le bol.")
             }
         })
+    },
+    prendre: function(e, f){
+        for (let i = 0; i < 5; i++){
+            e.push(f)
+        }
     }
 }
 
-let home = {
+export let home = {
     nom: "la maison",
     personnes: [perso],
 }
 
-let emptyBasket = {
+export let emptyBasket = {
     contenu: [],
-    type: panier,
 }
 
-let shop = {
+export let shop = {
     nom: "l'épicerie",
     personnes: [],
     baskets: [emptyBasket, emptyBasket, emptyBasket],
     contenu: [oignon, oeuf, tomate, fromage, epice],
+}
+
+export let bol = {
+    nom: "Bol",
+    contenu: [],
+    melanger: function (g) {
+        g = mixRaw
+    }
+}
+
+export let poele = {
+    nom: "Poêle",
+    contenu: [],
+    cuir: function (h) {setTimeout(()=> {h = "cuit"}, 4000)
+    alert("L'Omelette est prête")
+    }
 }
