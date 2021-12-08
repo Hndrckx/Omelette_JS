@@ -15,30 +15,30 @@ export let perso = {
     seDeplacer: function (a, z) {
         a.push(perso)
         perso.lieu = a.nom
-        alert((perso.nom) + " est à " + (z))
+        console.log((perso.nom) + " est à " + (z))
     },
     payer: function (b) {
         b.forEach(item => {
-            perso.argent - item.prix
+            perso.argent -= item.prix
         });
-        alert("Il reste " + (perso.argent) + "€ à " + (perso.nom))
+        console.log("Il reste " + (perso.argent) + "€ à " + (perso.nom))
     },
     couper: function (c, d) {
         c.forEach(item => {
             if (item.etat == "entier") {
-                item.etat = "coupé";
+                item.etat == "coupé";
                 d.push(item)
-                alert((item.nom) + "a été coupé et mis dans le bol.")
+                console.log((item.nom) + " a été coupé et mis dans le bol.")
             } else {
                 d.push(item)
-                alert((item.nom) + "a été mis dans le bol.")
+                console.log((item.nom) + " a été mis dans le bol.")
             }
         })
     },
     prendre: function (e, f) {
         for (let i = 0; i < 5; i++) {
             e.push(f[i])
-            alert((perso.nom) + " a pris " + (f[i].nom))
+            console.log((perso.nom) + " a pris " + (f[i].nom))
         }
     }
 }
@@ -75,6 +75,6 @@ export let poele = {
         setTimeout(() => {
             h = "cuit"
         }, 4000)
-        alert("L'Omelette est prête")
+        console.log("L'Omelette est prête")
     }
 }
