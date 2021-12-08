@@ -1,3 +1,11 @@
+import {
+    oignon,
+    oeuf,
+    tomate,
+    fromage,
+    epice
+} from "./class.js"
+
 let perso = {
     nom: "Michel",
     lieu: "la maison",
@@ -13,6 +21,7 @@ let perso = {
         b.forEach(item => {
             perso.argent - item.prix
         });
+        alert("Il reste " + (perso.argent) + "€ à " + (perso.nom))
     },
     couper: function (c, d) {
         c.forEach(item => {
@@ -31,4 +40,16 @@ let perso = {
 let home = {
     nom: "la maison",
     personnes: [perso],
+}
+
+let emptyBasket = {
+    contenu: [],
+    type: panier,
+}
+
+let shop = {
+    nom: "l'épicerie",
+    personnes: [],
+    baskets: [emptyBasket, emptyBasket, emptyBasket],
+    contenu: [oignon, oeuf, tomate, fromage, epice],
 }
