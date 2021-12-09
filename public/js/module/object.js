@@ -34,11 +34,12 @@ export let perso = {
                 d.push(item)
                 console.log((item.nom) + " a été mis dans le bol.")
             }
-            //for (let i = 0; c.length > 0; i++) {
-            //    c.splice(c.indexOf(c[i]));
-            //    i--;
-           // }
         })
+            for (let i = 0; c.length > 0; i++) {
+               c.splice(c.indexOf(c[i]));
+               i--;
+           }
+
     },
     prendre: function (e, f) {
         for (let i = 0; i < 5; i++) {
