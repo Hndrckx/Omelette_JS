@@ -3,7 +3,8 @@ import {
     oeuf,
     tomate,
     fromage,
-    epice
+    epice,
+    omelette,
 } from "./class.js"
 
 export let perso = {
@@ -32,6 +33,10 @@ export let perso = {
             } else {
                 d.push(item)
                 console.log((item.nom) + " a été mis dans le bol.")
+            }
+            for (let i = 0; c.length > 0; i++) {
+                c.splice(c.indexOf(c[i]));
+                i--;
             }
         })
     },
@@ -64,7 +69,8 @@ export let bol = {
     nom: "Bol",
     contenu: [],
     melanger: function (g) {
-        g = mixRaw
+        g = omelette
+        console.log((perso.nom) + " a fini de préparer le mélange, il ne reste plus qu'à le mettre dans la poêle");
     }
 }
 
@@ -73,8 +79,12 @@ export let poele = {
     contenu: [],
     cuir: function (h) {
         setTimeout(() => {
-            h = "cuit"
+            if (h.etat == "cru"){
+                h.etat == "cuit"
+                console.log("L'Omelette est prête")
+            } else {
+                console.log("La cuisson n'est pas encore finie")
+            }
         }, 4000)
-        console.log("L'Omelette est prête")
     }
 }
